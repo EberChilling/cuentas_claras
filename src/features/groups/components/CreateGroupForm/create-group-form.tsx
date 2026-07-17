@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {Button,Input, TextArea, InputField} from "./ui/components";
+import {Button,Input, TextArea, InputField} from "../../../../components/ui";
 interface Props {
   onSubmit: (data: {
     name: string;

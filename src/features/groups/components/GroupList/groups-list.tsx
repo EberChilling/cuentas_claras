@@ -1,4 +1,4 @@
-import { Group } from "../../../domain/models/group";
+import { Group } from "../../../../domain/models/group";
 
 interface Props {
   groups: Group[];
