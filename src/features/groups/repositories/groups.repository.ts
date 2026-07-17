@@ -1,5 +1,20 @@
 import { error } from "console";
 import { supabase } from "../../../lib/supabase";
+import { id } from "zod/locales";
+import { errorMonitor } from "events";
+
+
+export async function getGroupById(groupId:string){
+    const {data,error} = await supabase
+        .from("groups")
+        .select("*")
+        .eq("id",groupId)
+        .single();
+    
+    if(error) throw error;
+
+    return data
+}
 
 export async function getGroups() {
     const {data, error} = await supabase

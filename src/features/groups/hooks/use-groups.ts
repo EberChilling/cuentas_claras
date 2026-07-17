@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getGroups } from "../repositories/groups.repository";
+import { getGroups, getGroupById } from "../actions/get-groups";
 
 import { createGroup } from "../actions/create-group";
 
