@@ -1,7 +1,7 @@
 "use client";
 
-import { CreateGroupForm } from "../features/groups/components/CreateGroupForm/create-group-form";
-import { GroupsList } from "../features/groups/components/GroupList/groups-list";
+import { CreateGroupForm } from "../features/groups/components/CreateGroupForm";
+import { GroupsList } from "../features/groups/components/GroupList";
 import { useGroups } from "../features/groups/hooks/use-groups";
 
 export default function HomePage() {
