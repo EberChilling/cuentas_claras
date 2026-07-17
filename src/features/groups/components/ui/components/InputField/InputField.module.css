@@ -1,0 +1,23 @@
+.container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.label{
+
+    font-weight:600;
+
+}
+
+.error{
+
+    color:red;
+
+    font-size:.85rem;
+
+}

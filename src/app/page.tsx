@@ -12,17 +12,10 @@ export default function HomePage() {
   } = useGroups();
 
   return (
-    <main
-      style={{
-        maxWidth: 700,
-        margin: "40px auto",
-      }}
-    >
+    <main style={{maxWidth: 900,margin: "40px auto",}}>
       <h1>Cuentas Claras</h1>
 
-      <CreateGroupForm
-        onSubmit={createGroup}
-      />
+      <CreateGroupForm onSubmit={createGroup}/>
 
       <hr />
 

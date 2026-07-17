@@ -4,8 +4,12 @@ import { getGroups } from "../repositories/groups.repository";
 
 import { createGroup } from "../actions/create-group";
 
+import { Group } from "../../../domain/models/group";
+
+
+
 export function useGroups() {
-  const [groups, setGroups] = useState<any[]>([]);
+  const [groups, setGroups] = useState<Group[]>([]);
   const [loading, setLoading] = useState(true);
 
   async function refresh() {

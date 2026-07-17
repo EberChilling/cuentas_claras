@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import {Button,Input, TextArea, InputField} from "./ui/components";
 interface Props {
   onSubmit: (data: {
     name: string;
@@ -34,21 +34,27 @@ export function CreateGroupForm({ onSubmit }: Props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        placeholder="Nombre del grupo"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
 
-      <textarea
-        placeholder="Descripción"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
+      <InputField label="Nombre">
+        <Input
+            placeholder="Nombre del grupo"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+        />
+        
+        </InputField>
 
-      <button disabled={loading}>
-        {loading ? "Creando..." : "Crear Grupo"}
-      </button>
+      <InputField label="Descripcion">
+        <TextArea
+          placeholder="Descripción del grupo..."
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          />
+      </InputField>
+
+      <Button type="submit" loading={loading}>
+        Crear Nuevo Grupo
+      </Button>
     </form>
   );
 }
