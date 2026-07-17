@@ -9,7 +9,7 @@ export async function getGroupById(groupId:string){
         .from("groups")
         .select("*")
         .eq("id",groupId)
-        .single();
+        .maybeSingle();
     
     if(error) throw error;
 
