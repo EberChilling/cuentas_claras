@@ -1,7 +1,6 @@
 import styles from "./GroupCard.module.css"
 import { Card } from "@/src/components/ui"
-import { Group } from "../../../../domain/models/group";
-import React from "react";
+import { Group } from "@/src/domain/models/group";
 import Link  from "next/link";
 
 interface GroupCardProps{

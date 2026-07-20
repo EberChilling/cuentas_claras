@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
-import { getGroupById } from "../../../features/groups/actions/get-groups";
+import { getGroupById } from "@/src/features/groups/actions/get-groups";
+import { getMembers } from "@/src/features/members/actions/get-members";
+
 import { z } from "zod";
+import GroupMembersSection from "@/src/features/members/components/GroupMembersSection/GroupMembersSection";
 
 export const uuidSchema = z.uuid();
 
@@ -18,8 +21,9 @@ export default async function GroupPage({ params }: Props) {
     notFound();
   }
 
-  const group = await getGroupById(groupId);
-  
+  // Use of Promise.all to make multiple fetch at the same time
+  const [group,members] = await Promise.all([getGroupById(groupId),getMembers(groupId),
+  ]);
   // After checking in the DB if the id doesnt exist, then put the not found page.
   if(!group){
     notFound();
@@ -31,6 +35,11 @@ export default async function GroupPage({ params }: Props) {
       <h1>{group.name}</h1>
 
       <p>{group.description}</p>
+
+      <br></br>
+      
+      <GroupMembersSection groupId={group.id} initialMembers={members} />
+
     </main>
   );
 }

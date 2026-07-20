@@ -1,4 +1,4 @@
-import { Group } from "../../../../domain/models/group";
+import { Group } from "@/src/domain/models/group";
 
 import { GroupCard } from "../GroupCard";
 

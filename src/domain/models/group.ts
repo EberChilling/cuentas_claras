@@ -6,3 +6,4 @@ export type Group = Database["public"]["Tables"]["groups"]["Row"];
 export type CreateGroupInput = Database["public"]["Tables"]["groups"]["Insert"];
 
 export type UpdateGroupInput = Database["public"]["Tables"]["groups"]["Update"];
+
