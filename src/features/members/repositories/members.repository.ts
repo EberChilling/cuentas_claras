@@ -8,7 +8,7 @@ export async function getMembersByGroupId( groupId: string){
     // Assign the name member, to the row obtained from members(*) -> member: members(*)
     const {data, error} = await supabase
         .from("group_members")
-        .select(`joined_at,member: members(*)`)
+        .select(`group_id,joined_at,member: members(*)`)
         .eq("group_id",groupId)
 
     if(error) throw error;

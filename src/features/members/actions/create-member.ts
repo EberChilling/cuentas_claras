@@ -18,6 +18,6 @@ export async function createMember(input: {memberName:string; groupId:string}){
     //Assign the new member id to the group id
     const groupMember = await groupMembers_repository.createGroupMember(data.groupId, member.id)
 
-    return {joined_at:groupMember.joined_at , member};
+    return {group_id:groupMember.group_id ,joined_at:groupMember.joined_at , member};
 
 }

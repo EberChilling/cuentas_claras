@@ -13,13 +13,13 @@ interface GroupMembersSectionProps{
 
 export default function GroupMembersSection( { groupId , initialMembers} : GroupMembersSectionProps){
 
-    const {members,handleCreateMember}= useMembers(groupId,initialMembers);
+    const {members,handleCreateMember,handleDeleteGroupMember}= useMembers(groupId,initialMembers);
 
     return (
         <>
             <CreateMemberForm onSubmit={handleCreateMember}/>
 
-            <MembersList groupMembers={members} />
+            <MembersList groupMembers={members} onDeleteMember={handleDeleteGroupMember} />
         </>
         
     )
