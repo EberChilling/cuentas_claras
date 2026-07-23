@@ -1,11 +1,14 @@
 .card{
     display: block;
     width: auto;
-    height: 100px;
+
     background-color: #2564eb45;
-    margin: 10px 0px;
+    margin: 5px 5px;
     padding: 10px;
     cursor: pointer;
+}
 
+.card:hover{
+    background-color: #7d9fe745;
 }
 
